@@ -2893,7 +2893,7 @@ Show # $type->decorator->craftinggeneric $tier->normaldecoratorremover
 #------------------------------------
 # !! Override 140 : "Chromatic and Chisel Recipes"
 
-Hide # %H2 $type->endgamergb $tier->rgbsmall1
+Show # %H2 $type->endgamergb $tier->rgbsmall1
 	Width <= 2
 	Height <= 2
 	AreaLevel >= 68
@@ -2904,7 +2904,7 @@ Hide # %H2 $type->endgamergb $tier->rgbsmall1
 	SetBorderColor 200 200 200 255
 	SetBackgroundColor 130 110 110 255
 
-Hide # %H2 $type->endgamergb $tier->rgbsmall2
+Show # %H2 $type->endgamergb $tier->rgbsmall2
 	Width <= 1
 	Height <= 4
 	AreaLevel >= 68
@@ -5299,19 +5299,19 @@ Show # %D4 $type->gems-generic $tier->qt4lvl
 	PlayEffect Grey
 	MinimapIcon 1 White Triangle
 
-#Show # %D2 $type->gems-generic $tier->qt4
-#	Quality >= 1
-#	Class "Gems"
-#	SetFontSize 40
-#	SetTextColor 30 190 190 255
-#	SetBorderColor 40 130 130 255
+Show # %D2 $type->gems-generic $tier->qt4
+	Quality >= 1
+	Class "Gems"
+	SetFontSize 40
+	SetTextColor 30 190 190 255
+	SetBorderColor 40 130 130 255
 
-#Show # %D0 $type->gems-generic $tier->lt4
-#	GemLevel >= 2
-#	Class "Gems"
-#	SetFontSize 40
-#	SetTextColor 30 190 190 255
-#	SetBorderColor 40 130 130 255
+Show # %D2 $type->gems-generic $tier->lt4
+	GemLevel >= 2
+	Class "Gems"
+	SetFontSize 40
+	SetTextColor 30 190 190 255
+	SetBorderColor 40 130 130 255
 
 Show # $type->gems-generic $tier->firstzone
 	AreaLevel 1
@@ -8493,25 +8493,26 @@ Show # %D3 $type->leveling->normalmagic->rgb $tier->rgbsmall2
 	SetBorderColor 200 200 200 255
 	SetBackgroundColor 130 110 110 255
 
-#Show # %D2 $type->leveling->normalmagic->rgb $tier->rgblarge
-#	Width >= 2
-#	Height >= 4
-#	Rarity Normal Magic
-#	SocketGroup "RGB"
-#	SetFontSize 40
-#	SetTextColor 0 0 0 255
-#	SetBorderColor 0 0 0 255
-#	SetBackgroundColor 130 110 110 255
+Show # %D2 $type->leveling->normalmagic->rgb $tier->rgblarge
+	Width >= 2
+	Height >= 4
+	AreaLevel <= 34
+	Rarity <= Magic
+	SocketGroup "RGB"
+	SetFontSize 40
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 130 110 110 255
 
-#Show # %D2 $type->leveling->normalmagic->rgb $tier->rgbmedium
-#	Width >= 2
-#	Height 3
-#	Rarity Normal Magic
-#	SocketGroup "RGB"
-#	SetFontSize 40
-#	SetTextColor 0 0 0 255
-#	SetBorderColor 0 0 0 255
-#	SetBackgroundColor 130 110 110 255
+Show # %D2 $type->leveling->normalmagic->rgb $tier->rgbmedium
+	Width >= 2
+	Height 3
+	Rarity <= Magic
+	SocketGroup "RGB"
+	SetFontSize 40
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 130 110 110 255
 
 Show # %D3 $type->leveling->normalmagic->3l $tier->earlythreelinks
 	LinkedSockets >= 3
