@@ -182,7 +182,7 @@
 #   [4203] Exceptions #2
 #   [4204] Multi-Unique bases.
 #   [4205] Low tier exceptions
-#   [4206] Tier 3 uniques 
+#   [4206] Tier 3 uniques
 #   [4207] Tier 4 uniques
 # [[4300]] Misc Map Items
 # [[4400]] Questlike-Items2
@@ -1242,7 +1242,7 @@ Show # $type->rareid $tier->gloves_es_based
 
 #------------------------------------
 #   [0510] Shields
-#------------------------------------ 		
+#------------------------------------
 
 Show # $type->rareid $tier->shield_esfocus
 	Identified True
@@ -1407,7 +1407,7 @@ Show # $type->rareid $tier->amu_2coreattack
 
 #------------------------------------
 #   [0512] Rings
-#------------------------------------ 	
+#------------------------------------
 
 Show # $type->rareid $tier->ring_caster
 	Identified True
@@ -2482,7 +2482,7 @@ Show # %D5 $type->exotic->synthesised $tier->synthrandom
 
 #------------------------------------
 #   [0904] Fractured
-#------------------------------------ 	
+#------------------------------------
 
 Show # %D6 $type->exotic->fractured $tier->fractselected
 	FracturedItem True
@@ -2990,23 +2990,23 @@ Hide # %H1 $type->endgamergb $tier->rgbmedium
 #===============================================================================================================
 # !! Override 150 : "Chancing bases"
 
-#Show # %D1 $type->chancing $tier->hh
-#	Corrupted False
-#	Mirrored False
-#	Rarity Normal
-#	BaseType == "Elegant Round Shield" "Heavy Belt" "Leather Belt"
-#	SetFontSize 35
-#	SetTextColor 255 255 255 255
-#	SetBorderColor 0 150 0 90
+Show # %D1 $type->chancing $tier->hh
+	Corrupted False
+	Mirrored False
+	Rarity Normal
+	BaseType == "Elegant Round Shield" "Heavy Belt" "Leather Belt"
+	SetFontSize 35
+	SetTextColor 255 255 255 255
+	SetBorderColor 0 150 0 90
 
-#Show # %D1 $type->chancing $tier->t2
-#	Corrupted False
-#	Mirrored False
-#	Rarity Normal
-#	BaseType == "Champion Kite Shield"
-#	SetFontSize 35
-#	SetTextColor 255 255 255 255
-#	SetBorderColor 0 150 0 90
+Show # %D1 $type->chancing $tier->t2
+	Corrupted False
+	Mirrored False
+	Rarity Normal
+	BaseType == "Champion Kite Shield"
+	SetFontSize 35
+	SetTextColor 255 255 255 255
+	SetBorderColor 0 150 0 90
 
 #===============================================================================================================
 # [[1300]] Endgame Flasks
@@ -3486,7 +3486,7 @@ Show # %D4 $type->rr->belts $tier->t1
 #===============================================================================================================
 # [[2000]] Endgame - Rare - Gear - T1 - handpicked
 #===============================================================================================================
-# !! Override 240 : "T1 rares - handpicked"	
+# !! Override 240 : "T1 rares - handpicked"
 
 #Show # %D3 $type->rr $tier->t1weapons
 #	ItemLevel >= 68
@@ -7514,7 +7514,7 @@ Show # $type->uniques $tier->multispecial
 	PlayEffect Blue
 	MinimapIcon 1 Blue Star
 
-# We treat 2x scourged uniques as multispecial items as well, since we don't know their mods or behaviour	
+# We treat 2x scourged uniques as multispecial items as well, since we don't know their mods or behaviour
 
 Show # %D5 $type->uniques $tier->scourged
 	Scourged True
@@ -7527,7 +7527,7 @@ Show # %D5 $type->uniques $tier->scourged
 	PlayEffect Blue
 	MinimapIcon 1 Blue Star
 
-# For those 6 sockets	
+# For those 6 sockets
 
 Show # %D5 $type->uniques $tier->6s
 	Sockets >= 6
@@ -7591,7 +7591,7 @@ Show # $type->uniques $tier->exjewels
 	MinimapIcon 2 Blue Star
 
 #------------------------------------
-#   [4206] Tier 3 uniques 
+#   [4206] Tier 3 uniques
 #------------------------------------
 
 Show # $type->uniques $tier->t3boss
