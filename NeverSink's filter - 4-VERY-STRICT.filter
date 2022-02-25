@@ -749,14 +749,14 @@ Show # %D4 $type->rare->any $tier->anytoplevel
 	SetBackgroundColor 50 130 165
 	PlayEffect Blue Temp
 
-#Show # %D3 $type->rare->any $tier->any
-#	HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord
-#	Rarity Normal Magic Rare
-#	SetFontSize 45
-#	SetTextColor 255 255 255 255
-#	SetBorderColor 255 255 255 255
-#	SetBackgroundColor 50 130 165
-#	PlayEffect Blue Temp
+Show # %D3 $type->rare->any $tier->any
+	HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord
+	Rarity <= Rare
+	SetFontSize 45
+	SetTextColor 255 255 255 255
+	SetBorderColor 255 255 255 255
+	SetBackgroundColor 50 130 165
+	PlayEffect Blue Temp
 
 #===============================================================================================================
 # [[0300]] ELDRITCH ITEMS
@@ -2047,13 +2047,13 @@ Show # %D4 $type->exoticmods $tier->smallveil2
 	PlayEffect Blue
 	MinimapIcon 2 Blue Diamond
 
-#Show # %D3 $type->exoticmods $tier->veilrest
-#	Identified True
-#	Rarity Rare
-#	HasExplicitMod "Veil"
-#	SetFontSize 40
-#	SetBorderColor 0 240 190 180
-#	PlayEffect Blue Temp
+Show # %D3 $type->exoticmods $tier->veilrest
+	Identified True
+	Rarity Rare
+	HasExplicitMod "Veil"
+	SetFontSize 40
+	SetBorderColor 0 240 190 180
+	PlayEffect Blue Temp
 
 #------------------------------------
 #   [0702] Incursion/Temple Mods
@@ -3443,13 +3443,13 @@ Show # %D4 $type->rr->amuring $tier->t1
 	SetFontSize 45
 	SetBackgroundColor 0 80 30 255
 
-#Show # %D3 $type->rr->amuring $tier->t2
-#	ItemLevel >= 68
-#	Rarity Rare
-#	Class "Amulets" "Rings"
-#	BaseType "Amber Amulet" "Coral Ring" "Diamond Ring" "Jade Amulet" "Lapis Amulet" "Ruby Ring" "Sapphire Ring" "Topaz Ring" "Unset Ring"
-#	SetFontSize 45
-#	SetBackgroundColor 0 40 10 255
+Show # %D3 $type->rr->amuring $tier->t2
+	ItemLevel >= 68
+	Rarity Rare
+	Class "Amulets" "Rings"
+	BaseType "Amber Amulet" "Amethyst Ring" "Coral Ring" "Diamond Ring" "Jade Amulet" "Lapis Amulet" "Ruby Ring" "Sapphire Ring" "Topaz Ring" "Unset Ring"
+	SetFontSize 45
+	SetBackgroundColor 0 40 10 255
 
 #Show # %D2 $type->rr->amuring $tier->t3
 #	ItemLevel >= 68
@@ -3467,13 +3467,13 @@ Show # %D4 $type->rr->belts $tier->t1
 	SetFontSize 45
 	SetBackgroundColor 0 80 30 255
 
-#Show # %D3 $type->rr->belts $tier->t2
-#	ItemLevel >= 68
-#	Rarity Rare
-#	Class "Belts"
-#	BaseType "Heavy Belt" "Leather Belt" "Rustic Sash" "Vanguard Belt"
-#	SetFontSize 45
-#	SetBackgroundColor 0 40 10 255
+Show # %D3 $type->rr->belts $tier->t2
+	ItemLevel >= 68
+	Rarity Rare
+	Class "Belts"
+	BaseType "Heavy Belt" "Leather Belt" "Rustic Sash" "Vanguard Belt"
+	SetFontSize 45
+	SetBackgroundColor 0 40 10 255
 
 #Show # %D2 $type->rr->belts $tier->t3
 #	ItemLevel >= 68
@@ -3488,19 +3488,19 @@ Show # %D4 $type->rr->belts $tier->t1
 #===============================================================================================================
 # !! Override 240 : "T1 rares - handpicked"
 
-#Show # %D3 $type->rr $tier->t1weapons
-#	ItemLevel >= 68
-#	Rarity Rare
-#	BaseType "Convoking Wand" "Copper Kris" "Gemini Claw" "Golden Kris" "Imbued Wand" "Imperial Claw" "Opal Sceptre" "Opal Wand" "Platinum Kris" "Primal Arrow Quiver" "Profane Wand" "Short Bow" "Spine Bow" "Thicket Bow" "Void Sceptre"
-#	SetFontSize 45
-#	SetBackgroundColor 0 0 0 255
+Show # %D3 $type->rr $tier->t1weapons
+	ItemLevel >= 68
+	Rarity Rare
+	BaseType "Broadhead Arrow Quiver" "Convoking Wand" "Copper Kris" "Gemini Claw" "Golden Kris" "Imbued Wand" "Imperial Claw" "Opal Sceptre" "Opal Wand" "Platinum Kris" "Primal Arrow Quiver" "Profane Wand" "Short Bow" "Thicket Bow" "Void Sceptre"
+	SetFontSize 45
+	SetBackgroundColor 0 0 0 255
 
-#Show # %D3 $type->rr $tier->t1armours
-#	ItemLevel >= 68
-#	Rarity Rare
-#	BaseType "Apothecary's Gloves" "Bone Helmet" "Colossal Tower Shield" "Crusader Boots" "Deicide Mask" "Dragonscale Boots" "Dragonscale Gauntlets" "Eternal Burgonet" "Fingerless Silk Gloves" "Fugitive Boots" "Gripped Gloves" "Hubris Circlet" "Hydrascale Boots" "Lacquered Buckler" "Lion Pelt" "Murder Boots" "Murder Mitts" "Nightmare Bascinet" "Pig-Faced Bascinet" "Royal Burgonet" "Sinner Tricorne" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spiked Gloves" "Stealth Boots" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Two-Toned Boots" "Vaal Greaves"
-#	SetFontSize 45
-#	SetBackgroundColor 0 0 0 255
+Show # %D3 $type->rr $tier->t1armours
+	ItemLevel >= 68
+	Rarity Rare
+	BaseType "Apothecary's Gloves" "Bone Helmet" "Colossal Tower Shield" "Crusader Boots" "Deicide Mask" "Dragonscale Boots" "Dragonscale Gauntlets" "Eternal Burgonet" "Fingerless Silk Gloves" "Fugitive Boots" "Gripped Gloves" "Hubris Circlet" "Hydrascale Boots" "Imperial Buckler" "Lion Pelt" "Murder Boots" "Murder Mitts" "Nightmare Bascinet" "Pig-Faced Bascinet" "Royal Burgonet" "Sinner Tricorne" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spiked Gloves" "Stealth Boots" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Two-Toned Boots" "Vaal Greaves"
+	SetFontSize 45
+	SetBackgroundColor 0 0 0 255
 
 #===============================================================================================================
 # [[2100]] Endgame - Rare - Gear - T2 - handpicked
@@ -4781,7 +4781,7 @@ Show # %H4 $type->heist->cloak $tier->t2
 	PlayEffect Grey
 	MinimapIcon 1 Grey Raindrop
 
-Hide # %H3 $type->heist->cloak $tier->t3any
+Show # %H3 $type->heist->cloak $tier->t3any
 	Rarity Normal Magic Rare
 	Class "Heist Cloak"
 	SetFontSize 40
@@ -4828,7 +4828,7 @@ Show # %H4 $type->heist->brooch $tier->t2
 	PlayEffect Grey
 	MinimapIcon 1 Grey Raindrop
 
-Hide # %H3 $type->heist->brooch $tier->t3any
+Show # %H3 $type->heist->brooch $tier->t3any
 	Rarity Normal Magic Rare
 	Class "Heist Brooch"
 	SetFontSize 40
@@ -4875,7 +4875,7 @@ Show # %H4 $type->heist->gear $tier->t2
 	PlayEffect Grey
 	MinimapIcon 1 Grey Raindrop
 
-Hide # %H3 $type->heist->gear $tier->t3any
+Show # %H3 $type->heist->gear $tier->t3any
 	Rarity Normal Magic Rare
 	Class "Heist Gear"
 	SetFontSize 40
@@ -4922,7 +4922,7 @@ Show # %H4 $type->heist->tool $tier->t2
 	PlayEffect Grey
 	MinimapIcon 1 Grey Raindrop
 
-Hide # %H3 $type->heist->tool $tier->t3any
+Show # %H3 $type->heist->tool $tier->t3any
 	Rarity Normal Magic Rare
 	Class "Heist Tool"
 	SetFontSize 40
@@ -5246,22 +5246,22 @@ Show # %D4 $type->gems-generic $tier->lt2
 	PlayEffect Grey
 	MinimapIcon 1 White Triangle
 
-#Show # %D3 $type->gems-generic $tier->qt3
-#	Quality >= 14
-#	Class "Gems"
-#	SetFontSize 45
-#	SetTextColor 30 190 190 255
-#	SetBorderColor 30 190 190 255
-#	PlayAlertSound 2 300
-#	PlayEffect Grey
-#	MinimapIcon 1 White Triangle
+Show # %D3 $type->gems-generic $tier->qt3
+	Quality >= 14
+	Class "Gems"
+	SetFontSize 45
+	SetTextColor 30 190 190 255
+	SetBorderColor 30 190 190 255
+	PlayAlertSound 2 300
+	PlayEffect Grey
+	MinimapIcon 1 White Triangle
 
-#Show # %D2 $type->gems-generic $tier->lt3
-#	GemLevel >= 18
-#	Class "Gems"
-#	SetFontSize 40
-#	SetTextColor 30 190 190 255
-#	SetBorderColor 40 130 130 255
+Show # %D2 $type->gems-generic $tier->lt3
+	GemLevel >= 18
+	Class "Gems"
+	SetFontSize 40
+	SetTextColor 30 190 190 255
+	SetBorderColor 40 130 130 255
 
 Show # %D4 $type->gems-generic $tier->qt4lvl
 	Quality >= 1
@@ -5729,12 +5729,12 @@ Show # %H5 $type->maps $tier->maps_b_t11
 
 # !! Override 550 : "T16-T10 maps"
 
-#Show # %D3 $type->maps $tier->deco_mapup_t10
-#	MapTier >= 10
-#	AreaLevel < 77
-#	Class "Maps"
-#	SetBorderColor 220 50 0 255
-#	Continue
+Show # %D3 $type->maps $tier->deco_mapup_t10
+	MapTier >= 10
+	AreaLevel < 77
+	Class "Maps"
+	SetBorderColor 220 50 0 255
+	Continue
 
 Show # %H4 $type->maps $tier->maps_c_t10
 	MapTier 10
@@ -5746,12 +5746,12 @@ Show # %H4 $type->maps $tier->maps_c_t10
 	PlayEffect White
 	MinimapIcon 1 Yellow Square
 
-#Show # %D3 $type->maps $tier->deco_mapup_t9
-#	MapTier >= 9
-#	AreaLevel < 76
-#	Class "Maps"
-#	SetBorderColor 220 50 0 255
-#	Continue
+Show # %D3 $type->maps $tier->deco_mapup_t9
+	MapTier >= 9
+	AreaLevel < 76
+	Class "Maps"
+	SetBorderColor 220 50 0 255
+	Continue
 
 Show # %H4 $type->maps $tier->maps_c_t9
 	MapTier 9
@@ -5763,12 +5763,12 @@ Show # %H4 $type->maps $tier->maps_c_t9
 	PlayEffect White
 	MinimapIcon 1 Yellow Square
 
-#Show # %D3 $type->maps $tier->deco_mapup_t8
-#	MapTier >= 8
-#	AreaLevel < 75
-#	Class "Maps"
-#	SetBorderColor 220 50 0 255
-#	Continue
+Show # %D3 $type->maps $tier->deco_mapup_t8
+	MapTier >= 8
+	AreaLevel < 75
+	Class "Maps"
+	SetBorderColor 220 50 0 255
+	Continue
 
 Show # %H4 $type->maps $tier->maps_c_t8
 	MapTier 8
@@ -5780,12 +5780,12 @@ Show # %H4 $type->maps $tier->maps_c_t8
 	PlayEffect White
 	MinimapIcon 1 Yellow Square
 
-#Show # %D3 $type->maps $tier->deco_mapup_t7
-#	MapTier >= 7
-#	AreaLevel < 74
-#	Class "Maps"
-#	SetBorderColor 220 50 0 255
-#	Continue
+Show # %D3 $type->maps $tier->deco_mapup_t7
+	MapTier >= 7
+	AreaLevel < 74
+	Class "Maps"
+	SetBorderColor 220 50 0 255
+	Continue
 
 Show # %H4 $type->maps $tier->maps_c_t7
 	MapTier 7
@@ -5797,12 +5797,12 @@ Show # %H4 $type->maps $tier->maps_c_t7
 	PlayEffect White
 	MinimapIcon 1 Yellow Square
 
-#Show # %D3 $type->maps $tier->deco_mapup_t6
-#	MapTier >= 6
-#	AreaLevel < 73
-#	Class "Maps"
-#	SetBorderColor 220 50 0 255
-#	Continue
+Show # %D3 $type->maps $tier->deco_mapup_t6
+	MapTier >= 6
+	AreaLevel < 73
+	Class "Maps"
+	SetBorderColor 220 50 0 255
+	Continue
 
 Show # %H4 $type->maps $tier->maps_c_t6
 	MapTier 6
@@ -5816,12 +5816,12 @@ Show # %H4 $type->maps $tier->maps_c_t6
 
 # !! Override 560 : "T1-T5 maps"
 
-#Show # %D3 $type->maps $tier->deco_mapup_t5
-#	MapTier >= 5
-#	AreaLevel < 72
-#	Class "Maps"
-#	SetBorderColor 220 50 0 255
-#	Continue
+Show # %D3 $type->maps $tier->deco_mapup_t5
+	MapTier >= 5
+	AreaLevel < 72
+	Class "Maps"
+	SetBorderColor 220 50 0 255
+	Continue
 
 Show # %H4 $type->maps $tier->maps_d_t5
 	MapTier 5
@@ -5833,12 +5833,12 @@ Show # %H4 $type->maps $tier->maps_d_t5
 	PlayEffect White
 	MinimapIcon 2 White Square
 
-#Show # %D3 $type->maps $tier->deco_mapup_t4
-#	MapTier >= 4
-#	AreaLevel < 71
-#	Class "Maps"
-#	SetBorderColor 220 50 0 255
-#	Continue
+Show # %D3 $type->maps $tier->deco_mapup_t4
+	MapTier >= 4
+	AreaLevel < 71
+	Class "Maps"
+	SetBorderColor 220 50 0 255
+	Continue
 
 Show # %H4 $type->maps $tier->maps_d_t4
 	MapTier 4
@@ -5850,12 +5850,12 @@ Show # %H4 $type->maps $tier->maps_d_t4
 	PlayEffect White
 	MinimapIcon 2 White Square
 
-#Show # %D3 $type->maps $tier->deco_mapup_t3
-#	MapTier >= 3
-#	AreaLevel < 70
-#	Class "Maps"
-#	SetBorderColor 220 50 0 255
-#	Continue
+Show # %D3 $type->maps $tier->deco_mapup_t3
+	MapTier >= 3
+	AreaLevel < 70
+	Class "Maps"
+	SetBorderColor 220 50 0 255
+	Continue
 
 Show # %H4 $type->maps $tier->maps_d_t3
 	MapTier 3
@@ -5867,12 +5867,12 @@ Show # %H4 $type->maps $tier->maps_d_t3
 	PlayEffect White
 	MinimapIcon 2 White Square
 
-#Show # %D3 $type->maps $tier->deco_mapup_t2
-#	MapTier >= 2
-#	AreaLevel < 69
-#	Class "Maps"
-#	SetBorderColor 220 50 0 255
-#	Continue
+Show # %D3 $type->maps $tier->deco_mapup_t2
+	MapTier >= 2
+	AreaLevel < 69
+	Class "Maps"
+	SetBorderColor 220 50 0 255
+	Continue
 
 Show # %H4 $type->maps $tier->maps_d_t2
 	MapTier 2
@@ -5884,12 +5884,12 @@ Show # %H4 $type->maps $tier->maps_d_t2
 	PlayEffect White
 	MinimapIcon 2 White Square
 
-#Show # %D3 $type->maps $tier->deco_mapup_t1
-#	MapTier >= 1
-#	AreaLevel < 68
-#	Class "Maps"
-#	SetBorderColor 220 50 0 255
-#	Continue
+Show # %D3 $type->maps $tier->deco_mapup_t1
+	MapTier >= 1
+	AreaLevel < 68
+	Class "Maps"
+	SetBorderColor 220 50 0 255
+	Continue
 
 Show # %H4 $type->maps $tier->maps_d_t1
 	MapTier 1
@@ -6230,7 +6230,7 @@ Show # %HS3 $type->currency->stackedsupplieshigh $tier->t2
 	SetBorderColor 0 0 0 255
 	SetBackgroundColor 210 178 135 255
 
-Hide # %H3 $type->currency->stackedsupplieshigh $tier->t3
+Show # %H3 $type->currency->stackedsupplieshigh $tier->t3
 	StackSize >= 3
 	Class "Currency"
 	BaseType == "Blacksmith's Whetstone" "Orb of Augmentation" "Orb of Transmutation"
@@ -6266,7 +6266,7 @@ Show # %HS3 $type->currency->stackedsupplieslow $tier->t2
 	SetBorderColor 0 0 0 255
 	SetBackgroundColor 210 178 135 255
 
-Hide # %H3 $type->currency->stackedsupplieslow $tier->t3
+Show # %H3 $type->currency->stackedsupplieslow $tier->t3
 	StackSize >= 3
 	Class "Currency"
 	BaseType == "Armourer's Scrap"
@@ -6287,7 +6287,7 @@ Show # %HS4 $type->currency->stackedsuppliesportal $tier->t1
 	SetBorderColor 60 100 200 255
 	SetBackgroundColor 5 8 40 255
 
-Hide # %HS2 $type->currency->stackedsuppliesportal $tier->t2
+Show # %HS2 $type->currency->stackedsuppliesportal $tier->t2
 	StackSize >= 6
 	Class "Currency"
 	BaseType == "Portal Scroll"
@@ -6315,7 +6315,7 @@ Show # %HS4 $type->currency->stackedsupplieswisdom $tier->t1
 	SetBorderColor 200 100 60 255
 	SetBackgroundColor 30 5 5 255
 
-Hide # %HS2 $type->currency->stackedsupplieswisdom $tier->t2
+Show # %HS2 $type->currency->stackedsupplieswisdom $tier->t2
 	StackSize >= 6
 	Class "Currency"
 	BaseType == "Scroll of Wisdom"
@@ -6486,7 +6486,7 @@ Show # %HS3 $type->currency->stackedthree $tier->t6
 	SetBorderColor 0 0 0 255
 	SetBackgroundColor 210 178 135 255
 
-Hide # %H3 $type->currency->stackedthree $tier->t7
+Show # %H3 $type->currency->stackedthree $tier->t7
 	StackSize >= 3
 	Class "Currency"
 	BaseType == "Alchemy Shard" "Alteration Shard" "Binding Shard" "Horizon Shard" "Regal Shard"
@@ -6998,7 +6998,7 @@ Show # %H5 $type->currency->incubators $tier->t3
 	PlayEffect White
 	MinimapIcon 2 White Circle
 
-Hide # %H3 $type->currency->incubators $tier->t4
+Show # %H3 $type->currency->incubators $tier->t4
 	Class "Incubator"
 	BaseType == "Celestial Armoursmith's Incubator" "Celestial Blacksmith's Incubator" "Celestial Jeweller's Incubator" "Fine Incubator" "Fragmented Incubator" "Whispering Incubator"
 	SetFontSize 45
@@ -7620,7 +7620,7 @@ Show # %H4 $type->uniques $tier->t3
 #   [4207] Tier 4 uniques
 #------------------------------------
 
-Hide # %H3 $type->uniques $tier->hideable2
+Show # %H3 $type->uniques $tier->hideable2
 	Rarity Unique
 	BaseType == "Blazing Arrow Quiver" "Blunt Arrow Quiver" "Brass Maul" "Callous Mask" "Despot Axe" "Dragonscale Gauntlets" "Elegant Ringmail" "Elegant Sword" "Great Mallet" "Iron Circlet" "Iron Mask" "Ironscale Boots" "Loricated Ringmail" "Ornate Sword" "Royal Staff" "Rusted Sword" "Sharktooth Arrow Quiver" "Strapped Leather" "Visored Sallet" "Woodsplitter"
 	SetFontSize 40
@@ -7628,7 +7628,7 @@ Hide # %H3 $type->uniques $tier->hideable2
 	SetBorderColor 175 96 37 255
 	SetBackgroundColor 0 0 0 255
 
-Hide # %H3 $type->uniques $tier->hideable
+Show # %H3 $type->uniques $tier->hideable
 	Rarity Unique
 	BaseType == "Abyssal Axe" "Ancient Greaves" "Antique Greaves" "Antique Rapier" "Arcanist Gloves" "Assassin's Garb" "Auric Mace" "Aventail Helmet" "Awl" "Basket Rapier" "Bastard Sword" "Black Maw Talisman" "Blue Pearl Amulet" "Bone Armour" "Bone Bow" "Boot Blade" "Boot Knife" "Bronze Gauntlets" "Bronze Sceptre" "Buckskin Tunic" "Cardinal Round Shield" "Carnal Sceptre" "Cedar Tower Shield" "Chain Gloves" "Chiming Spirit Shield" "Clasped Boots" "Clasped Mitts" "Cleaver" "Close Helmet" "Clutching Talisman" "Compound Spiked Shield" "Conjurer Boots" "Conjurer Gloves" "Conquest Chainmail" "Copper Plate" "Coronal Leather" "Corrugated Buckler" "Crude Bow" "Crusader Chainmail" "Crystal Wand" "Decimation Bow" "Decorative Axe" "Deerskin Boots" "Deicide Mask" "Destroyer Regalia" "Diamond Ring" "Dread Maul" "Dream Mace" "Driftwood Wand" "Eelskin Gloves" "Elder Sword" "Elegant Round Shield" "Enameled Buckler" "Engraved Wand" "Estoc" "Etched Greatsword" "Eternal Burgonet" "Ezomyte Axe" "Ezomyte Blade" "Feathered Arrow Quiver" "Fingerless Silk Gloves" "Flaying Knife" "Fossilised Spirit Shield" "Fright Claw" "Fugitive Boots" "Full Dragonscale" "Full Wyrmscale" "Gilded Sallet" "Gnarled Branch" "Goat's Horn" "Golden Mask" "Goliath Gauntlets" "Great Helmet" "Grinning Fetish" "Gut Ripper" "Harbinger Bow" "Harmonic Spirit Shield" "Headsman Axe" "Heavy Arrow Quiver" "Highland Blade" "Holy Chainmail" "Imbued Wand" "Infernal Axe" "Iron Gauntlets" "Iron Hat" "Ironscale Gauntlets" "Jade Hatchet" "Jagged Foil" "Jagged Maul" "Karui Chopper" "Karui Sceptre" "Labrys" "Lacquered Buckler" "Laminated Kite Shield" "Lathi" "Latticed Ringmail" "Legion Boots" "Lion Pelt" "Lion Sword" "Marble Amulet" "Mesh Boots" "Mesh Gloves" "Midnight Blade" "Military Staff" "Mosaic Kite Shield" "Nailed Fist" "Opal Sceptre" "Ornate Mace" "Ornate Ringmail" "Painted Buckler" "Penetrating Arrow Quiver" "Pine Buckler" "Plague Mask" "Plank Kite Shield" "Plate Vest" "Platinum Kris" "Poleaxe" "Polished Spiked Shield" "Primordial Staff" "Quartz Wand" "Quicksilver Flask" "Reaver Sword" "Recurve Bow" "Regicide Mask" "Reinforced Tower Shield" "Rotfeather Talisman" "Rotted Round Shield" "Runic Gages" "Sabre" "Samite Gloves" "Samnite Helmet" "Sanctified Mana Flask" "Satin Gloves" "Scholar Boots" "Secutor Helm" "Serpentscale Boots" "Serrated Arrow Quiver" "Shadow Axe" "Shagreen Boots" "Shagreen Gloves" "Sharkskin Boots" "Sharkskin Tunic" "Siege Helmet" "Silk Slippers" "Simple Robe" "Skinning Knife" "Slaughter Knife" "Sledgehammer" "Slink Gloves" "Soldier Helmet" "Sorcerer Gloves" "Spiked Club" "Spike-Point Arrow Quiver" "Steel Circlet" "Steel Gauntlets" "Steelhead" "Stiletto" "Strapped Boots" "Studded Round Shield" "Sundering Axe" "Supreme Spiked Shield" "Terror Maul" "Thresher Claw" "Tiger Sword" "Timeworn Claw" "Tomahawk" "Trapper Boots" "Tribal Circlet" "Tricorne" "Twilight Blade" "Two-Toned Boots" "Ursine Pelt" "Vaal Buckler" "Vaal Claw" "Vaal Hatchet" "Vaal Regalia" "Velvet Slippers" "Vile Arrow Quiver" "Vile Staff" "Vine Circlet" "War Buckler" "War Hammer" "War Sword" "Whalebone Rapier" "Wool Gloves" "Wool Shoes" "Wrapped Mitts" "Wyrmscale Gauntlets" "Zealot Helmet"
 	SetFontSize 40
