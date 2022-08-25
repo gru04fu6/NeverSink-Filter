@@ -3495,6 +3495,13 @@ Show # %D3 $type->rr $tier->t1weapons
 	SetFontSize 45
 	SetBackgroundColor 0 0 0 255
 
+Show # %D3 $type->rr $tier->t1weapons
+	ItemLevel >= 68
+	Rarity <= Rare
+	BaseType "Imperial Claw"
+	SetFontSize 45
+	SetBackgroundColor 0 0 0 255
+
 Show # %D3 $type->rr $tier->t1armours
 	ItemLevel >= 68
 	Rarity Rare
