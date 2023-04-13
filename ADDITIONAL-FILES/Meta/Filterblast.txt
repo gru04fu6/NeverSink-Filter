@@ -1,7 +1,7 @@
 Filter [NeverSink's In-Depth Lootfilter]
 
-Version [8.9.1]
-LastUpdate [Dec.X.2022]
+Version [8.10.1]
+LastUpdate [Apr.X.2023]
 PoEVersion [3.18.X]
 
 ForumThread [https://www.pathofexile.com/forum/view-thread/1246208]

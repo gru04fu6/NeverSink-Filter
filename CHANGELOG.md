@@ -6,6 +6,225 @@ Every 4 hours we generate a "economy-updated" version of the filter based on the
 The "economy-based" versions are available through [FilterBlade](www.filterblade.xyz) and on the [PoE filter ladder](https://www.pathofexile.com/item-filter/ladder/follower). Major thanks to all patreon supports to help us fund the continious development. [Patreon](https://www.patreon.com/Neversink) supporters also receive a Patreon-exclusive [Filter-Auto-Updater](https://youtu.be/i8RJx0s0zsA).
 
 ----------------------------------
+# **VERSION 8.10.1** - Economy Update
+----------------------------------
+
+## SHORT OVERVIEW
+Improves the tiering of all tierlsits. Also fixed the filter economy update/generation scripts, that were broken by GGG's APIs changing.
+
+## GENERAL
+- All tierlists have been adjusted based on the current economy
+    - This currently includes the following tierlists: Uniques, Divination Cards, Fragments (incl. splinters), Currency (incl. stacked currency and shards), Scarabs, Unique Maps, Fossils, Incubators, Oils, Vials, Delirium Orbs, Invitations, Influenced Items, Expensive Atlas Bases, Cluster Jewels, Replicas and Gems.
+
+## ARCHITECTURE
+- Fixed the filter economy update/generation scripts, that were broken by GGG's APIs changing.
+- Added additional checks to the filter economy update/generation scripts to prevent future issues.
+
+----------------------------------
+# **VERSION 8.10.0** - CRUCIBLE LEAGUE
+----------------------------------
+
+## SHORT OVERVIEW
+All the crucible content has been added! Importantly: we added a new section that is specifically there to highlight some white/magic items in the endgame to have some food for the crucible forge/krangler. Currently this section contains generally good bases or bases that share a good unique (for the chance of a unique sell node). The current list is: "Convoking Wand" "Champion Kite Shield" "Spine Bow" "Imperial Claw" "Opal Sceptre" "Prophecy Wand" "Short Bow" "Siege Axe". You can customize it on FilterBlade. This rule is disabled on Very strict.
+
+This patch contains MAJOR tiering improvements to unique, divination card and other tiering types and a TON of other changes (check the patch notes for more info). It also contains major improvements to the FilterBlade UI and FilterBlade meta data!
+
+Good luck in the crucible league!
+
+## NEW LEAGUE ITEMS
+- Added the new crucible currencies
+- Added a section to highlight items (rare or lower) with crucible trees (these should not drop by default, but I've learned that things tend to change over time, so it's good to be on the safe side)
+- Added a section to highlight items (unique) with crucible trees (these should not drop by default, but I've learned that things tend to change over time, so it's good to be on the safe side)
+- Added new divination cards
+- Added a new section that is specifically there to highlight some white/magic items in the endgame to have some food for the crucible forge/krangler. Currently this section contains generally good bases or bases that share a good unique (for the chance of a unique sell node). The current list is: "Convoking Wand" "Champion Kite Shield" "Spine Bow" "Imperial Claw" "Opal Sceptre" "Prophecy Wand" "Short Bow" "Siege Axe". You can cusotmize it on FilterBlade. This rule is disabled on Very strict.
+- Added special tiering to new uniques
+
+## MAJOR FILTERBLADE IMPROVEMENTS
+- Tierlists hover-information is vastly improved. It contains additional data, filters out relics and is much more concise.
+- Tierlists now can show extra-data about a certain item or a specific unique. This is for instance used to visualize where a certain unique drops, the rewards of incubators etc. Also it just looks really rad.
+- Reworked all hover-UIs on FilterBlade. These are much more concise and useful now
+
+## LEAGUE RELATED ADJUSTMENTS
+- Added a section to detect maps with 'implicit' mods that can drop under some circumstances (like the shadow shaping node)
+- Removed the 'of Unwavering' abyss jewel ID detection mod
+- Removed 'Serpent Wand' that was causing issues with the new patch for some reason
+- Renamed 'The Iron Bard' divination card
+- Moved breachstones to it's own tierlist
+
+## MAP LIKE ITEM CHANGES
+- Disabled the section for detecting nemesis+beyond maps as this combo no longer has any value after the last 2 leagues
+
+## UNIQUE TIERING
+- Made a ton of adjustments to the unique tiering aspects (meta-information).
+- Reviewed and adjusted the tiering strategy for a lot of uniques. This includes over 50 aspect changes and will improve tiering in many cases!
+- Removed a bunch of aspects from no-longer-dropping uniques. This will lead to a bunch of uniques that were previously landing in the "non-drop-category" to land into the hideable category
+- Cleaned up and added special exceptions to handle no longer dropping basetypes and race rewards better.
+- A huge thank you to @mellontoss for compiling tons of data and suggestions for the unique changes!
+- Added an exception to highlight starforge/voidforge drops based on their influence! Note that we can't recommend disabling unique infernal sword drops as Echoforge can't be detected.
+- Revamped the algorithm to be slightly more exclusive when it comes to 'semi-expensive' and 'multi-base' uniques. Items found in this section should be significantly better than the hidable uniques on average.
+- Improved the 'early league unique tiering'. Cleaned up the list of early league uniques to be a bit more strict.
+- Marked most abyss and most breach items as 'buffed'. They'll be tiered slightly better than their previous tiering was in the last league and are not allowed to enter the 'hideable' uniques during the first days of the league.
+- Marked all sanctum items as 'non-drop'
+- Slightly increased the divine price component of the price requirement for T1 uniques
+- Slightly increased the price requirement for multibase uniques
+- Slightly increased the price scaling for semi-expensive uniques
+
+## DIVINATION CARD ALGORITHM
+- I scrapped the old algorithm and rewrote it from scratch. Divination card tiering data coming from the economy is still dirtier than the infinite hunger fight, but the new algorthm seems be performing much better overall.
+- Cleaned and improved the aspects (meta-information) of the divination cards. This should lead to some improved tiering in some niche cases.
+- The Lingering Remnants Divination card is no longer allowed to drop below T4
+
+## UNIQUE JEWEL TIERING
+- [DISABLED, feature will be readded soon] Added minimal unique jewel tiering where possible. In the case of most jewels this does not work as too many jewels share the same base. However, some jewels such as abyss jewels are now economy-tiered.
+- Rational doctrine drops are now highlighted as T1 (using the fact that they're the only synthesised jewel)
+- Megalomaniac jewel moved to T2 from multibase
+
+## OTHER TIERING CHANGES
+- Standardized and clean up all tiering algorithms. This should lead to a more consistent tiering in the future.
+- Breachstones and splinters have received some temporary adjustments to improve their tiering in regards to the 3.21 changes
+- Further improved cluster jewel tiering. The tiering algorithm is now more reluctant to put cluster jewels into the T1 category during the early league (as the data is super hazy)
+
+## MISC CHANGES
+- Added a new section on FilterBlade (and a disabled by default rule in the filter) that highlights quality minion gems for +1 helmet recipes!
+- Added 3.21 and 3.20 gems to the +1 recipe highlight sections
+- Increased the stack size requirement on all simulacrum splinters to create high tier sounds/highlights.
+- Removed a bunch of unique map bases that no longer drop
+- Removed lures from the fragment tab as these no longer drop ingame.
+- Added new abyss mods to the identified abyss jewel section
+
+----------------------------------
+# **VERSION 8.9.6** - Voidborne keys, Corrupted uniques and minor modifications
+----------------------------------
+
+## SHORT OVERVIEW
+
+Added voidborne keys, improved the tiering of gems and corrupted uniques and made some minor modifications to the filter.
+
+## GENERAL
+- Added highlight for the voidborne reliquary keys.
+- All tierlists have been adjusted based on the current economy
+    - This currently includes the following tierlists: Uniques, Divination Cards, Fragments (incl. splinters), Currency (incl. stacked currency and shards), Scarabs, Unique Maps, Fossils, Incubators, Oils, Vials, Delirium Orbs, Invitations, Influenced Items, Expensive Atlas Bases, Cluster Jewels, Replicas and Gems.
+
+## UNIQUE TIERING
+- Added a new rule to highlight corrupted uniques that would otherwise be caught by the T3/T4 uniques section. This rule is disabled on uber strict. The rule currently highlights the following classes:  "Amulets" "Belts" "Boots" "Gloves" "Helmets" "Rings" "Shields" "Quivers". Weapons/body armours are excluded - due to the low usage rate of random-non-expensive unique weapons with single corruptions and the need to 6socket/link these. Note that ALL double corrupted items were and are still highlighted, no matter the class
+
+## GEM TIERING
+- Improved the gem tiering algorithm in multiple was
+- The gem tiering rule for 20/20 gems, now only highlights uncorrupted gems
+- The gem tiering rule for 21/20+ and 20/23+ gems now includes gems that both pass and don't pass the 20/20 test
+- Removed the 21/23 tiering rule as these gems don't drop naturally anymore. These gems are highlighted 
+- Added a general 21/23 rule that highlights any 21/23 gem
+
+## MISC CHANGES
+- Further Improved the algorithms for divination card and stacked currency tiering.
+- Increased the strictness of exarch/eater rares. They're now all hidden on very strict.
+
+----------------------------------
+# **VERSION 8.9.5** - Over-Quality Flasks (eco-update only)
+----------------------------------
+
+## SHORT OVERVIEW
+
+Addresses the discovery of flasks now dropping naturally (from rares) with up to 30% quality.
+
+This update only affects eco-updated filters. Stable version is not affected.
+
+## GENERAL CHANGES
+- Added a new rule that highlights the best life/mana and all util flasks of ilvl82 with 29%+ quality.
+
+----------------------------------
+# **VERSION 8.9.4** - Adjustments for weird 200+ divine economy (eco-update only)
+----------------------------------
+
+## SHORT OVERVIEW
+
+This patch fixes some problems with economy updated filters, related to stacked and currencies and some anomalies related to the 200c+ economy. 
+
+This update only affects eco-updated filters. Stable version is not affected.
+
+## GENERAL CHANGES
+- Reworked the handling of stacked currencies. They're now using exactly the same threshhold as the non-stacked currencies.
+- Slightly increased the minimum threshhold for T1 currencies (50->60). This is mostly to prevent elevated sextants and single fracturing orbs from dinging on maven kills. If they rise even further - well, the economy has spoken :p.
+- Increased the minimum threshhold for T3 currencies from 3.0c to 3.1c. While this may sound small, this will lead to currencies that claim to be 'exactly' 1c (but usually are below from experience), to not be able to reach the T3 tier if dropped in stacks of 3+
+- Introduced a bunch of other improvements related to chaos prices rising over 200+ and causing tiering anomalies. If all fails, the generator will assume that the chaos price is 200c for the sake for tiering uniques and divination cards (only if the chaos price is above 200c).
+
+----------------------------------
+# **VERSION 8.9.3** - New Sanctum Items
+----------------------------------
+
+## SHORT OVERVIEW
+
+This patch adds new unique relics and invocations dropped by Lycia at the end of the sanctum to the filter. For now they're all added with the exalted orb tier, but they're not hidden on any strictness
+
+## GENERAL CHANGES
+- Added new invocations to the filter
+- Added a virtual tierlist to the invocations - the structure for the tierlist is already there, but it does not tier anything yet (until invocation economy data will be available)
+- Added a section for the new unique relics
+- Did nothing for the new original sin ring as it'll be already highlighted, just letting you know it's all good :)
+- All tierlists have been adjusted based on the current economy
+    - This currently includes the following tierlists: Uniques, Divination Cards, Fragments (incl. splinters), Currency (incl. stacked currency and shards), Scarabs, Unique Maps, Fossils, Incubators, Oils, Vials, Delirium Orbs, Invitations, Influenced Items, Expensive Atlas Bases, Cluster Jewels, Replicas and Gems.
+
+----------------------------------
+# **VERSION 8.9.2** - Better fractured, influenced, unique and cluster jewel tiering
+----------------------------------
+
+## SHORT OVERVIEW
+
+Sanctum has changed a lot of aspects in regards to droprates and economy. This update focuses on improving the economy tiering to reflect the new meta.
+
+On top of general tiering improvement I've overhauled the treatment of: fractured items, cluster jewels, influenced items and boss-dropped uniques.
+
+Feedback is always appreciated. Please let me know if you think something is wrong or missing or needs updating.
+
+## GENERAL CHANGES
+- Made all economy based T2 tiers slightly less strict (dominant orb scaling factor changed from 0.25 to 0.2). This will lead to a few more items being caught by the 'exalted orb tier' (prev. divine orb tier: the goonng, not the shwing sound).
+- All tierlists have been adjusted based on the current economy
+    - This currently includes the following tierlists: Uniques, Divination Cards, Fragments (incl. splinters), Currency (incl. stacked currency and shards), Scarabs, Unique Maps, Fossils, Incubators, Oils, Vials, Delirium Orbs, Invitations, Influenced Items, Expensive Atlas Bases, Cluster Jewels, Replicas and Gems.
+
+## FRACTURED ITEM TIERING OVERHAUL
+- Motivation behind changes:
+    - Fractured items drop fairly frequently in very large batches. Sorting through these is cumbersome
+    - The previous handpicked bases valued the basetype tier too much over the basetype class.
+- Reworked the tiering for fractured bases:
+    - T1 - handpicked bases
+        - Filter by basetype and are now more inclusive. These include most wands, sceptres and significantly more bases that can roll suppression. These also favour boots and shields over helmets, body armours and gloves (even though top items are still highlighted). They also now include amulets, belts and rings, which were previously only caught through the class based fractured tiering. They feature less staves and other mostly physically played bases.
+        - Now have stronger highlighting
+        - Shown on all strictnesses
+    - T2 - class based filtering. Shows all bases as long as they're part of the class
+        - Currently includes: "Amulets" "Belts" "Boots" "Bows" "Flask" "Gloves" "Heist" "Jewel" "Maps" "Shields" "Quivers" "Rings" "Rune Daggers" "Sceptres" "Wands". 
+        - Shown on all strictnesses except on uber-plus-strict
+    - T3 fractured bases - all other fractured items:
+        - Now hidden on very strict
+- While the system is flexible, it's not perfect by any means. I'm reliant on your feedback to get it right. Please let me know if you think something is wrong or missing or needs updating.
+
+## UNIQUE TIERING
+- Added special treatment to the internal 'HighVariety' tag on unqiues. If a unique that drops from a boss has this tag it will never be allowed to drop below the 'boss-drop-uniques' tier. This will prevent items that end up super cheap in certain scenarios, but expensive in others (such as cinderswallow urn depending upon if it's unveiled or not) from dropping to a lower tier.
+- Added a special treatment for uniques that only consist of non-world-drops (such as unique boss drops)
+- Expanded the additional protection to new/unknown uniques
+
+## INFLUENCED TIERING OVERHAUL
+- Motivation behind changes:
+    - The general number of uses for shaper/elder/conqueror items has gone down and so did their demand as most meta builds run a lot more fractured+eldritch or unique items in their equipment. Still certain influenced items are still quite valuable - just are less of a chase base as they were before
+    - On top of that these items are more accessable and drop in bulk at a high level from conqueror/shaper/elder maps and invitations.
+    - The player is generally a bit overloaded with the number of drops
+- Specific changes:
+    - T1 drops:
+        - Now all produce an 'exalted orb' sound (T2)
+    - T2 drops: 
+        - No longer produces the 'exalted orb' sound, but instead play the unique sound. These are generally good items that MAY sell, but no longer a near garantueed money maker as it was leagues before
+        - Changed the T2 common useful influenced bases section to require ILVL 84 instead of ILVL 86
+        - Changed the T2 common useful influenced bases section to T1+T2 basetypes from the general rare section. In layman's terms: the filter will highlight best crafting bases, such as vaal regalias, two-stone rings and eternal burgonets as T2 drops, if they're ILVL 85 and are influenced.
+            - This rule is disabled on uber-strict
+            - Uber-strict will only use economy based information to determine if an item is a T2 drop
+            - T2 drops from economy tiering will still be shown on uber-strict
+        - Reduced the threshhold for T2 drops
+
+## CLUSTER JEWEL TIERING OVERHAUL
+- Vastly improved cluster jewel tiering and done a lot of cleanup in the economy updater.
+- On top of a general cleanup and improvements. fixed a bug that caused previously expensive cluster jewels to 'stick around' in the tierlist. It will now detect a lot less false positives.
+- With the problem above fixed, reduced the threshhold for expensive cluster jewels.
+
+----------------------------------
 # **VERSION 8.9.1** - Economy improvements
 ----------------------------------
 
