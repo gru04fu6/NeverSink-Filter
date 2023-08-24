@@ -6,6 +6,257 @@ Every 4 hours we generate a "economy-updated" version of the filter based on the
 The "economy-based" versions are available through [FilterBlade](www.filterblade.xyz) and on the [PoE filter ladder](https://www.pathofexile.com/item-filter/ladder/follower). Major thanks to all patreon supports to help us fund the continious development. [Patreon](https://www.patreon.com/Neversink) supporters also receive a Patreon-exclusive [Filter-Auto-Updater](https://youtu.be/i8RJx0s0zsA).
 
 ----------------------------------
+# **VERSION 8.11.1** - First Economy Update
+----------------------------------
+
+## SHORT OVERVIEW
+Tattoos and omens are now tiered. Adjusted tier tiering algorithm and updated the tiering for unique and unique map tierlists. This update affects the stable filter as well as the unique/currency tiering was pretty messy before that. 
+
+## TIERING ADJUSTMENTS:
+- All tierlists have been adjusted based on the current economy:
+    - This currently includes the following tierlists: Uniques, Divination Cards, Fragments (incl. splinters), Currency (incl. stacked currency and shards), Scarabs, Unique Maps, Fossils, Incubators, Oils, Vials, Delirium Orbs, Invitations, Influenced Items, Expensive Atlas Bases, Cluster Jewels, Breachstones, Replicas, Omen, Tattoos and Gems.
+- The tattoos are now all economy tiered! (thanks Rasmus for the quick poe.ninja integration)
+- The Omen are now all economy tiered! (thanks Rasmus for the quick poe.ninja integration - AGAIN)
+- Changed the tiering threshholds on unique maps. In general higher tiers require higher prices now.
+- Changed the tiering of T1 uniques. They now require a slightly higher price.
+- Adjusted the early league tiering algorithm. It should no longer overprice stacks of sextants and similar items in future leagues.
+- Added the new uniques into the tierlist
+- Adjusted previous sanctum unique tiering
+
+----------------------------------
+# **VERSION 8.11.0** - Trial of the Ancestors League Update
+----------------------------------
+
+## SHORT OVERVIEW
+Talamoana exile. This patch adds support for all that new and old trial of the ancestor items. Additionally it features large scale improvements to tiering, fractured items, influenced items, cluster jewels, jewels, gems, divination cards, uniques, currency and much more. It also features a bunch of architecture improvements and quite a few FilterBlade features.
+
+We hope you'll enjoy the new league and the new filter!
+
+## TRIAL OF THE ANCESTOR CHANGES:
+- Added a new rule for silver coins. The appearance for the silver coins has been decided by a democratic election. Thanks twitch chat. They'll likely wander into the currency tierlist if trial goes core.
+- Added a tierlist for all the tattoos (with safety section in case some were missed)
+- Added a tierlist for all the omen (with safety section in case some were missed)
+- Added a new rule for hinekor's locks. They'll likely wander into the currency tierlist if trial goes core.
+- Added a rule to highlight forbidden tomes and related sanctum items
+- Wiped the dust of the sanctum relic rules
+- Added aspects to uniques that have a new unique attached to them to minimize the risk of them being hidden
+
+## TIERING ADJUSTMENTS:
+- All tierlists have been adjusted based on the current economy:
+    - This currently includes the following tierlists: Uniques, Divination Cards, Fragments (incl. splinters), Currency (incl. stacked currency and shards), Scarabs, Unique Maps, Fossils, Incubators, Oils, Vials, Delirium Orbs, Invitations, Influenced Items, Expensive Atlas Bases, Cluster Jewels, Breachstones, Replicas and Gems.
+- Removed orbs that never drop in stacks or where the chance of an orb dropping in a stack is astronomically low from the 'stacked currency' section. These orbs are still highlighted in the 'currency' section.
+
+> *NeverSink's notes: I'm aware that stacked currency tiering on filterblade is currently in a bad spot, we're looking for a good UI to improve that situation. We're looking for good UI/UX suggestions for that. If you have any, please approach us on our discord!*
+
+- Anchored Exalted Orbs and Elevated Sextants to the T2 currency tier. This is to prevent economy anomalies early on in the league and them sometimes shifting to T1.
+- ~~Moved ritual and crescent splinters into their own category out of currency~~ (Delayed until next patch, it was giving us too many technical difficulties with existing filterblade savestates)
+- Removed the atlas base status from some atlas bases that are not used at all
+- Trying out a new strategy to tiering divination cards. The strategy won't be active during the first days of the league, but will afterwards attempt to weight all cards down (because the economy data for it is super noisy) with an offset based on the stacksize.
+- Expanded the selection of 'good' eater/exarch bases with the focus on gloves and boots, especially ones that can roll suppression. All other ones are hidden on semi-strict and up.
+- Adjusted the list of early league uniques
+- Adjusted the list of early league divination cards
+- Adjusted early endgame crafting bases.
+
+> *NeverSink's notes: In the future I'll likely rework the algorithm alltogether. That being said, I still count for influenced items to get reworked evenutally, with them barely seeing any use compared to fractured/eldritch bases, with some very few niche exceptions, such as some boots, helmets and gloves (usually elevated/awakened ultra-endgame bases). Maybe the atlas expansion will change them.*
+
+## INFLUENCED ITEMS:
+
+> *NeverSink's notes: Influenced basetype tiering has been frustrating to handle based on economy data alone. The main reasons are that there's a huge variety of basetype-itemlevel-influence-cost combinations. This results in weird items entering the economy. Additionally crafted item, chancing bases and people misspricing made the economy-data frustrating to handle.*
+>
+> *This is a bit of a move of desperation and I already have a better system planned, but I'm done playing idiot-whack-a-mole and I hope so are you. I'm introducing a double blacklist in the economy tiering. The 'T1' blacklist forbids a base to ever enter T1 or T2 of the influenced tierlist. 'T2' items will receive a major cut to their 'confidence' value when tiering. The blacklist is mostly used on super low level bases.*
+>
+> *I will closely monitor the situation*
+
+- Influenced item tiering now employ a two-tier-black-list to prevent pointless items from entering the economy tiering.
+- The general influenced item tiering algorithm has been improved
+
+## FRACTURED ITEMS:
+
+> *NeverSink's notes: Fractured items are some of the most important crafting bases in the game. Previously I've been using a 3-tier approach, where the first tier is filtering by specific bases, the second tier by class and the third tier everything else. This approach had a bunch of issues, such as making filterblade editing complicated and also merging armor-types. For instance when the second tier was highlighting ALL fractured gloves, it'd also highlight low level fractured ES gloves, which are significantly less useful than the low-evasion based gloves, which can roll suppression.*
+>
+> *To improve the tiering, I'm adding a second basetype-based tier. This allows for a lot more precision and gives filterblade users more capabilities as well. I'm keeping the class-based tier around for exotic items, such as fractured heist bases, maps etc.*
+>
+> *Below you'll find the logic employed when adjusting the tiers*
+
+- Reviewed all T1 and T2 fractured bases. They have all been retiered
+- Generally: gear that can roll suppression has more bases highlighted
+- Generally: energy shield and armor bases require higher basetypes to be highlighted
+- Generally: most boots are highlighted, but T1 focuses on the better bases
+- Generally: many helmets/gloves are highlighted, but T1 focuses on the better bases
+- Generally: all rings, belts and amulets are highlighted among the T1/T2 bases
+- Nearly all one handed fractured caster weapons are highlighted among the T1 and T2 tier. T1 tier focuses on the bases with the better implicits
+- Most attack weapons are only shown if they're one of the best/meta bases (with the exception of some best T2 maces, axes, claws and some others). - A lot of bows and quivers are highlighted as well. T1 focuses on the better bases as usual.
+
+## REMOVED SECTIONS: 
+- Crucible crafting section has been removed
+- Crucible currency section has been removed
+
+## STYLE IMPROVEMENTS:
+- Items that previously had a black background (0 0 0) now have a SLIGHTLY non-black one (20 20 0). In practice the game renders things still EXACTLY 100% black, probably due to some postprocessing uniqueness in POEs implementation. However, when hovering/selecting the item it will receive a distinct slightly-golden background! This makes looting slightly easier as it's easier to spot the hovered item! This effect is being applied as a post-processing layer during filter generation and is not part of the filter files/style files. If this looks weird or off to you please let me know. I'm especially interested in console/macOS feedback as I don't know how their rendering works
+
+## STRICTNESS ADJUSTMENTS:
+
+> *NeverSink's notes: I'm treating atlas bases more and more like other base, as they've been losing their position to fractured/eldritch and synthesized bases. The changes to the strictness here are a preparation for a larger full scale rarity/endgame crafting base items rework.*
+
+- Increased the strictness on the filtering of 'perfection-bases' (itemlevel 86 armours with perfect base defense multiplier)
+- Increased the strictness of atlas base filtering. Random normal atlas bases below itemlevel 86 are now hidden in the endgame on strict and above. You'll still stumble across occasional rare bases.
+- T3 fractured items are now hidden on strict instead of very strict
+
+> *NeverSink's notes: Over the years, I've been adding a lot of different special cases for jewels, as both jewel types have had their mod-pool expanded several times. The goal now is to give them a consistent and clear treatment: very strict removes pretty much all*
+
+- Revamped the strictness of generic and abyss jewel rules
+- Generic Jewels: Magic jewels are hidden on strict (68+)
+- Generic Jewels: Magic jewels ILVL 1-68 are hidden on very strict
+- Generic Jewels: Rare jewels are hidden on uber strict
+- Abyss Jewels: Magic jewels ILVL1-68 are hidden on very strict (for leveling)
+- Abyss Jewels: Magic jewels ILVL68-81 are hidden on strict
+- Abyss Jewels: Magic jewels ILVL86+ are hidden on uber-plus-strict
+- Abyss Jewels: Rare jewels ILVL1-85 are hidden on uber strict
+- Abyss Jewels: Rare jewels 86+ are hidden on uber-plus-strict
+- The filter now highlights any ILVL84 12 node large cluster jewel (until uber-plus-strict) independent of the economy data
+- Not new, but important for next changes: The filter now highlights any ILVL84 8 node large cluster jewel (until uber-plus-strict) independent of the economy data
+- 8-Node Large Cluster jewels that were NOT matched by economy data are hidden on uber-strict
+- Random Large Cluster jewels are hidden on very strict
+- Random Medium Cluster jewels are now hidden on very strict
+- Random Small Cluster jewels are now hidden on very strict
+
+## LEVELING ADJUSTMENTS:
+
+> *NeverSink's notes: I noticed some minor inconsistencies during the very early levels of the campaign. This should help it feel better by unifying highlights and sizes*
+
+- Magic items until level 9 have now slightly higher font size than before
+- Small chromatic (RGB) items while leveling now have  higher font size
+- Wands and sceptres have been added to the list of early-items (until level 9) that receive extra highlight when 3 sockets. Previously this list only included gloves, shields, boots and helmets.
+- Until level 9 all random non-tiny magic items have a slightly stronger border
+- Low level flasks (small, medium, large) are now displayed until a higher zone level.
+
+## IDENTIFIED MOD FILTERING:
+- Many identified mod filtering rules now also filter for 'negative mods'. For instnace identified boots rules will not highlight boots anymore with 4 good mods, but low tier movement speed. Similary an identified physical damage weapon, won't be highlighted if it has a very low tier flat phys mods, even if it has other good mods (this has been already part of 8.10.5, but now also affects the stable branch)
+
+## FILTERBLADE:
+- This filter supports adds further support to one of FilterBlade's coolest systems - custom rules! We've added and expanded support for duplicating, reording, renaming rules and much more. This was released ahead of time to get it test well.
+- FilterBlade currency, divination and unique tierlists now support 'tags'. You can ui-filter by those on filterblade! These tags are sourced from a public repository on my github
+- Dozens of small improvements to filterblade, such as a general customizer cleanup, performance improvements, loot simulator improvements etc.
+
+## MISC CHANGES:
+
+- Removed engraved ultimatum rule as it was made completely redundant by the unique map tierlist
+- Added new gems into the +1 recipe sections
+- Expanded a lot of check for the item to be uncorrupted with a unmirror check as well.
+- Removed "Infused Engineer's Orb" as it doesn't drop anymore
+- Removed some outdated no-longer-dropping incubators from the tierlists
+- Endgame low strictness quality flasks are now only highlighted when normal
+- Added a sectino to highlight stacked scarabs
+- Lots of other minor adjustments
+
+## ARCHITECTURE IMPROVEMENTS:
+> *NeverSink's notes: In the coming monthes and year we'll be doing a lot of architecture/infrastructre adjustments to support 3 filters (poe1,poe2,mobile or more!) in the future, it's a major part of our roadmap now, but we believe the improvements will allow for a whole number of general benefits as well!*
+
+- Improved the structure of the 'aspect' files that are used to economy-tier the filters
+- Reworked the 'Waypoint' system within the filter. This system enables FilterBlade to use a ton of different locations for custom rules that are forward compatible with future filter update versions.
+- Further improvements to filter structure and generation
+
+----------------------------------
+# **VERSION 8.10.4** - architecture update
+----------------------------------
+
+## SHORT OVERVIEW
+This update implements mostly technical preparations to enable some future features and also implements some improvements to tiering and performance.
+
+## TIERING ADJUSTMENTS:
+- re-enabled unique jewels tiering. This currently only applies to (some) unique cluster jewels and all abyss jewels
+- divination cards that award fragments and unique jewels now attempt to use the economy information about the card reward (+ the stack size and some other data) to figure out the price of the card and detect potential cases of noisy data or pricefixing in the economy data
+
+## ARCHITECTURE IMPROVEMENTS
+- Turned over 100 sections that were checking for basetype into equal match sections ( using the  '==' operators ). This should have no impact on the actual filtering, but will improve performance and reduce ambiguity (Highlighting "Saintly Chainmails" won't highlight "Sai"s anymore etc). This might cause some filterblade savestates to throw errors, if non-exact wording has been used to do changes.
+- Essences, Oils, Incubators and Contracts have received a dedicated hide section. This is to enable users to use conditional operators (such as arealevel and stacksize) in the rules, without the remaining items appearing pink. New and unknown items will still be highlighted.
+
+----------------------------------
+# **VERSION 8.10.3a** - finetunings, fixes and economy
+----------------------------------
+
+## SHORT OVERVIEW
+
+This update mostly contains structural improvements, cleanups and minor fixes.
+
+## NEW RULES:
+- Added a rule to detect 4-white socket triad grip gloves.
+
+## TIERING ADJUSTMENTS:
+- All tierlists have been adjusted based on the current economy:
+    - This currently includes the following tierlists: Uniques, Divination Cards, Fragments (incl. splinters), Currency (incl. stacked currency and shards), Scarabs, Unique Maps, Fossils, Incubators, Oils, Vials, Delirium Orbs, Invitations, Influenced Items, Expensive Atlas Bases, Cluster Jewels, Breachstones, Replicas and Gems.
+
+## MISC IMPROVEMENTS AND FIXES:
+- Fixed a bug where early endgame 4links (arealevel 68-71) with 4links would also match uniques. This only affected soft and regular strictness.
+- Most places that have been requiring an item to not be corrupted also now require the non-mirrored state
+- The low tier quality flask rule now requires the flask to be normal
+
+
+----------------------------------
+# **VERSION 8.10.3** - split six sockets, corrupted rule bugfix and misc adjustments
+----------------------------------
+
+## SHORT OVERVIEW
+
+The new ID mod rule to detect potentially useful quivers and gloves lacked the class scope and was accidently showing a bunch of random corrupted items. Sorry. Fixed.
+
+## NEW RULES:
+- Split the 6Socket rule into 6S-4height and 6S-3height. The 4 height rule is disabled on very strict, the 3 height one on uber-strict. This will hopefully help smoothen the transition a bit.
+
+## TIERING ADJUSTMENTS:
+- All tierlists have been adjusted based on the current economy:
+    - This currently includes the following tierlists: Uniques, Divination Cards, Fragments (incl. splinters), Currency (incl. stacked currency and shards), Scarabs, Unique Maps, Fossils, Incubators, Oils, Vials, Delirium Orbs, Invitations, Influenced Items, Expensive Atlas Bases, Cluster Jewels, Breachstones, Replicas and Gems.
+- Six-link rewarding div cards no longer can drop below T4 (previously T3), but are now treated as currency type cards (as random late-league random six link cards have barely any value beyond the 20 fusings). This also includes tabula cards. These cards have the 'earlyleague' aspect, so they'll go back to T3 (or higher) during the first days of the league, when 6-links are in high demand
+- Moved artillery quivers from T3 to T2 in the crafting bases
+
+## MISC RULES:
+- Increased the strictness of the newly introduced quiver and glove rules (both with id-mod checking and without)
+- Fixed a bug with the new ID mod rule for quivers and gloves that was showing all classes, instead of scoping on the right one resulting in some needless clutter. 
+
+----------------------------------
+# **VERSION 8.10.2** - Economy Update, Jewels, Breachstones, Corruptions and Enhanced Efficiency
+----------------------------------
+
+## SHORT OVERVIEW
+
+This update includes economy-based adjustments, eco-updated breachstone tiering, improved filtering of influenced items, lots of tiering improvements and updated quality flask checks. It also brings tailored rules for identified quivers and gloves and 3x abyss socket shrouds. Also dozens of architecture enhancements to improve performance and potential edge cases have also been implemented, with special thanks to Mellontoss for valuable contributions.
+
+I may have used chatgpt to build the title & short description above.
+
+## NEW RULES:
+- Added a section to specifically search for identified quivers and gloves with a few useful mods AND a corrupted implicit. The number of mods required is lower than with the regular identified mod section. Quivers require ilvl 80+
+- Added a rule to highlight ilvl 80+ rare corrupted quivers with 1+ corrupted implicit. This rule is designed to help players find those sweet sweet chain-corrupted-quivers. The rule is disabled on uber strict.
+- Added a rule to highlight 3x abyss socket shrouds
+
+## STRICTNESS, TIERING AND ECONOMY RELATED IMPROVEMENTS:
+- Breachstones are now also economy-tiered
+- All tierlists have been adjusted based on the current economy:
+    - This currently includes the following tierlists: Uniques, Divination Cards, Fragments (incl. splinters), Currency (incl. stacked currency and shards), Scarabs, Unique Maps, Fossils, Incubators, Oils, Vials, Delirium Orbs, Invitations, Influenced Items, Expensive Atlas Bases, Cluster Jewels, Breachstones, Replicas and Gems.
+- Increased the threshhold price for T1 splinters (this will result in Xoph, Esh, Tul and Templar splinter moving from T1->T2 and changes to stacked splinters)
+- Adjusted the meta-aspects for a bunch of div cards. This has a lot of small results, but most notably around ~20 T3 cards were downgraded to T4 or T4currency to improve tiering accuracy.
+- Increased the tiering of 'regular' jewels to the T2 tier as almost all of those are worth something, often a lot. Additionally the corrupted jewel section now also tests if the jewel has exactly 0 corrupted implicits. All corrupted jewels with 1 or more corrupted implicits are the 'regular' expensive jewels! Yes this means that the alva-temple 'roomba' boss and the heist boss that drop cheap jewels will be baiting players.
+- Slightly increased the highlight of corrupted jewels
+- Slightly decreased the threshold for T2 uniques.
+- Disabled the 2 rules for influenced rare items that were highlighting "top-droplevel" and atlas basetyped items. Instead all of the influenced data is now economy driven to improve the filtering of influenced items. The rules can be manually enabled on FilterBlade. We'll keep the situation under observation and might re-enable them if they are still needed.
+- Implemented a few overrides for start-of-league scenarios that will help prevent currency from being overtiered in the future.
+- Minor adjustments to unique and currency aspects
+
+## MISC IMPROVEMENTS:
+- Fractured bases are now only highlighted if they're not corrupted. This is to prevent the filter from highlighting corrupted bases that are not worth anything.
+- Added gloves and quivers to the list of favored double corrupted rare items
+- Double corrupted rares now have a red color, instead of the teal one
+- High level overquality flasks are now checked starting with 26%+ quality instead of 29%+. While 26-28% is creatable with betrayal, those are still a welcome find.
+- High level flasks now also check for being non-mirrored 
+- The identified item handling rule for rares between T2 and T3 rares is now disabled on semi-strict instead of very strict. It was created during ultimatum when the game used to roll well rolled rares and filter idented-mod checking capabilities were still quite limited. Right now I don't know anyone really liking this rule.
+
+## ARCHITECTURE IMPROVEMENTS:
+- Designed a system to detect and remove outdated basetypes from tierlists. This removes items that no longer drop (such as disabled divination cards).
+- Standardized the show/hide/disable ruling in a lot of rules. Most crafting and exotic bases rule now tend to use disable, instead of hide to prevent accidental hiding of items that are actually worth something. This is an ongoing process.
+- Done a large series of improvements related to filter parsing performance, filter generation and filterblade related changes. This usually includes changes like sorting of rules, usage of "==" operators and sorting of selectors within the rules.
+- Most rules that check for "Corrupted False" now also check for "Mirrored False"
+- Special thanks to Mellontoss for helping out with this update, he has collected a large number of various improvements!
+
+----------------------------------
 # **VERSION 8.10.1** - Economy Update
 ----------------------------------
 
