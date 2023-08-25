@@ -4226,10 +4226,21 @@ Show # %HS3 $type->jewels->generic $tier->anyrare
 	PlayEffect Grey Temp
 	MinimapIcon 2 Grey Diamond
 
+Show # %HS3 $type->jewels->generic $tier->anyrare
+	Rarity Normal Magic
+	Class "Jewel"
+	BaseType == "Crimson Jewel"
+	SetFontSize 45
+	SetTextColor 220 220 0 255
+	SetBorderColor 220 220 0 255
+	SetBackgroundColor 120 120 0 225
+	PlayEffect Grey Temp
+	MinimapIcon 2 Grey Diamond
+
 Hide # %H2 $type->jewels->generic $tier->anymagic
 	Rarity Normal Magic
 	Class "Jewel"
-	BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"
+	BaseType == "Cobalt Jewel" "Viridian Jewel"
 	SetFontSize 40
 	SetTextColor 0 75 250 255
 	SetBorderColor 0 75 250 255
@@ -6732,14 +6743,14 @@ Show # %DS3 $type->currency->stackedsupplieshigh $tier->t2
 	SetBorderColor 0 0 0 255
 	SetBackgroundColor 210 178 135 255
 
-#Show # %D2 $type->currency->stackedsupplieshigh $tier->t3
-#	StackSize >= 3
-#	Class "Currency"
-#	BaseType == "Blacksmith's Whetstone" "Orb of Augmentation" "Orb of Transmutation"
-#	SetFontSize 45
-#	SetTextColor 0 0 0 255
-#	SetBorderColor 0 0 0 255
-#	SetBackgroundColor 210 178 135 255
+Show # %D2 $type->currency->stackedsupplieshigh $tier->t3
+	StackSize >= 3
+	Class "Currency"
+	BaseType == "Blacksmith's Whetstone" "Orb of Augmentation" "Orb of Transmutation"
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 210 178 135 255
 
 #------------------------------------
 #   [3602] Supplies: Low Stacking
@@ -6768,14 +6779,14 @@ Show # %DS3 $type->currency->stackedsupplieslow $tier->t2
 	SetBorderColor 0 0 0 255
 	SetBackgroundColor 210 178 135 255
 
-#Show # %D2 $type->currency->stackedsupplieslow $tier->t3
-#	StackSize >= 3
-#	Class "Currency"
-#	BaseType == "Armourer's Scrap"
-#	SetFontSize 45
-#	SetTextColor 190 178 135 255
-#	SetBorderColor 190 178 135 255
-#	SetBackgroundColor 20 20 0 255
+Show # %D2 $type->currency->stackedsupplieslow $tier->t3
+	StackSize >= 3
+	Class "Currency"
+	BaseType == "Armourer's Scrap"
+	SetFontSize 45
+	SetTextColor 190 178 135 255
+	SetBorderColor 190 178 135 255
+	SetBackgroundColor 20 20 0 255
 
 #------------------------------------
 #   [3603] Supplies: Portal Stacking
@@ -6797,13 +6808,13 @@ Show # %D3 $type->currency->stackedsuppliesportal $tier->t2
 	SetBorderColor 60 100 200 255
 	SetBackgroundColor 5 8 40 255
 
-#Show # %D2 $type->currency->stackedsuppliesportal $tier->t3
-#	StackSize >= 3
-#	Class "Currency"
-#	BaseType == "Portal Scroll"
-#	SetFontSize 40
-#	SetBorderColor 30 50 100 255
-#	SetBackgroundColor 20 20 0 255
+Show # %D2 $type->currency->stackedsuppliesportal $tier->t3
+	StackSize >= 3
+	Class "Currency"
+	BaseType == "Portal Scroll"
+	SetFontSize 40
+	SetBorderColor 30 50 100 255
+	SetBackgroundColor 20 20 0 255
 
 #------------------------------------
 #   [3604] Supplies: Wisdom Stacking
@@ -6825,13 +6836,13 @@ Show # %D3 $type->currency->stackedsupplieswisdom $tier->t2
 	SetBorderColor 200 100 60 255
 	SetBackgroundColor 30 5 5 255
 
-#Show # %D2 $type->currency->stackedsupplieswisdom $tier->t3
-#	StackSize >= 3
-#	Class "Currency"
-#	BaseType == "Scroll of Wisdom"
-#	SetFontSize 40
-#	SetBorderColor 100 50 30 255
-#	SetBackgroundColor 20 20 0 255
+Show # %D2 $type->currency->stackedsupplieswisdom $tier->t3
+	StackSize >= 3
+	Class "Currency"
+	BaseType == "Scroll of Wisdom"
+	SetFontSize 40
+	SetBorderColor 100 50 30 255
+	SetBackgroundColor 20 20 0 255
 
 #------------------------------------
 #   [3605] Stacked Currencies: 6x
